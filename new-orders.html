@@ -1,0 +1,230 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>訂單頁</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="stylesheet" href="assets/css/new-style.css">
+
+    <style>
+        body{
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="am-u-sm-12" style="padding: 0;">
+    <div class="or-top am-u-sm-12" style="text-align: left; padding: 10px 0; color: #333; font-weight: bold;">選擇收貨地址</div>
+
+
+    <div class="am-u-sm-12" style="padding: 0;">
+        <div class="am-u-sm-4 am-form-group" style=" margin: 0; padding: 0 10px;">
+            <select id="prov_id" class="prov" data-am-selected="{btnWidth: '100%'}" placeholder="請選擇" style=" font-size: 1.6rem;"><option value ="請選擇">請選擇</option><option value ="台北縣">台北縣</option></select>
+        </div>
+
+        <div class="am-u-sm-4 am-form-group" style=" margin: 0; padding: 0 10px;">
+            <select id="city_id" class="city" data-am-selected="{btnWidth: '100%'}" placeholder="請選擇" disabled="disabled" style="font-size: 1.6rem;"></select>
+        </div>
+
+        <div class="am-input-group am-u-sm-4" style=" padding: 0 10px;">
+            <input id="address" type="text" class="am-form-field" placeholder="請輸入詳細地址" style=" color: #666; padding: 0; padding-left: 10px;">
+        </div>
+    </div>
+
+
+    <div class="am-u-sm-12" style="padding: 0;">
+        <div class="am-input-group am-u-sm-6" style="padding: 10px;">
+            <input id="name" type="text" class="am-form-field" placeholder="請輸入收貨人姓名" style="color: #666; padding: 0; padding-left: 10px;">
+        </div>
+
+        <div class="am-input-group am-u-sm-6" style="padding: 10px;">
+            <input id="phone" type="text" class="am-form-field" placeholder="請輸入收貨人聯繫電話" style="color: #666; padding: 0; padding-left: 10px;">
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="am-u-sm-12 address" style="padding: 0;">
+
+    <div class="or-top am-u-sm-12" style="text-align: left; padding: 10px 0; color: #333; font-weight: bold;">確認訂單信息</div>
+
+    <div class="am-u-sm-12" style="padding: 5px 0; font-size: 0; text-align: center;">
+        <div style="border-bottom: 3px solid #b2d1ff; display: inline-block; width: 296px; margin-right: 1px; font-size: 15px; line-height: 24px; color: #6C6C6C;">店鋪寶貝</div>
+        <div style="border-bottom: 3px solid #b2d1ff; display: inline-block; width: 200px; margin-right: 1px; font-size: 15px; line-height: 24px; color: #6C6C6C;">商品屬性</div>
+        <div style="border-bottom: 3px solid #b2d1ff; display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; line-height: 24px; color: #6C6C6C;">單價</div>
+        <div style="border-bottom: 3px solid #b2d1ff; display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; line-height: 24px; color: #6C6C6C;">數量</div>
+        <div style="border-bottom: 3px solid #b2d1ff; display: inline-block; width: 200px; font-size: 15px; line-height: 24px; color: #6C6C6C;">小計</div>
+    </div>
+
+    <div class="am-u-sm-12" style="padding: 0; margin: 10px 0; font-size: 0; border-top: 1px dotted #80b2ff; border-bottom: 1px dotted #80b2ff;">
+        <div style="background: #FBFCFF; padding: 10px 0;">
+            <div style=" display: inline-block; width: 296px; margin-right: 1px; font-size: 15px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; vertical-align: top; padding: 0 10px;">
+                <img style="width: 20%; height: 20%" src="assets/i/examples/gnib.jpg" alt=""/>
+                【1300W像素】华为honor/荣耀 畅玩5A 4G智能手机大屏官方正品
+            </div>
+            <div style=" display: inline-block; width: 200px; margin-right: 1px; font-size: 15px; padding: 0 10px;">
+                <div style="margin-right: 1px;">尺碼：44</div>
+                <div style="margin-right: 1px;">顏色分類：白色</div>
+            </div>
+            <div style=" display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; text-align: center; vertical-align: top;">888</div>
+            <div style=" display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; text-align: center; vertical-align: top;">
+                <div style="padding: 0; display: inline-block;">
+                    <button id="min" type="button" class="am-btn am-btn-default" style=" font-size: 13px; display: inline-block;"><i class="am-icon-minus"></i></button>
+                    <input id="num" class="am-form-field" style="text-align: center; width: 50px; height: 28px; display: inline-block;" type="text" name="num" maxlength="40" value="1" placeholder="请输入购买數量"/>
+                    <button id="add" type="button" class="am-btn am-btn-default" style=" font-size: 13px; display: inline-block;"><i class="am-icon-plus"></i></button>
+                </div>
+            </div>
+            <div style=" display: inline-block; width: 200px; font-size: 15px; color: #dd2727; vertical-align: top; text-align: right; padding-right: 10px;">888</div>
+        </div>
+
+
+        <div style=" height: 40px; background: #F2F7FF; border-top: 1px solid #FFF; padding: 10px;">
+            <span style="padding: 0;">
+                <span style="font-size: 14px; color: #333; display: inline-block; padding-left: 10px;">給賣家留言：</span>
+                <span style="width: 300px; display: inline-block;">
+                    <input type="text" class="am-form-field" placeholder="選填:對本次交易的說明" style=" padding: 0; color: #666; font-size: 14px;">
+                </span>
+            </span>
+            <span style="font-size: 14px; color: #666; float: right;">運送方式：宅配到家 貨到付款</span>
+        </div>
+
+        <div style="text-align: right; height: 45px; background: #F2F7FF; border-top: 1px solid #FFF; z-index: 999;padding: 10px 0; padding-right: 10px;">
+            <span style="font-size: 14px; color: #333;">店铺合计(含运费) <span style="color: #dd2727; font-weight: bold; font-size: 16px;">$ 888</span></span>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="am-u-sm-12" style="padding: 0;">
+    <div class="am-u-sm-4 am-fr" style="padding: 0; text-align: right; border: 1px solid #dd2727;">
+        <div style="border: 3px solid #fff0e8; padding: 10px 10px 10px 20px;">
+            <div><span style="color: #333; font-weight: bold; font-size: 14px;">实付款：</span><span style="color: #999; font-size: 26px; margin-right: 4px;">$</span><span style="color: #dd2727; font-size: 26px; font-weight: bold;">799.00</span></div>
+            <div><span style="color: #333; font-weight: bold; font-size: 14px;">寄送至：</span><span style="color: #666; font-size: 14px;">灣仔軒尼詩道158號10樓</span></div>
+            <div><span style="color: #333; font-weight: bold; font-size: 14px;">收货人：</span><span style="color: #666; font-size: 14px;">張大三 1010101010</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="am-u-sm-12" style="padding: 0;">
+    <div id="submit" style="padding: 0; text-align: center; border: 1px solid #dd2727; height: 40px; width: 180px; background: #dd2727; float: right; color: #FFF; line-height: 35px; font-size: 16px; cursor: pointer;">
+        提交訂單
+    </div>
+</div>
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<script>
+
+    $("#submit").click(function () {
+        if ($("#prov_id").val() == "請選擇") {
+            alert("請選擇市/縣");
+            return false;
+        }
+        if ($("#city_id").val() == "請選擇") {
+            alert("請選擇區");
+            return false;
+        }
+        if ($("#address").val() == "") {
+            alert("詳細地址不能為空！");
+            return false;
+        }
+        if ($("#name").val() == "") {
+            alert("收貨人姓名不能為空！");
+            return false;
+        }
+        var ph = $("#phone").val();
+        if (!ph) {
+            alert("收貨人聯繫電話不能為空！");
+            return false;
+        }
+        var reg = $("#phone").val().length < 10;
+        if (reg) {
+            alert("請輸入正確的手機號碼！");
+            return false;
+        }
+    });
+
+    //num
+    //获得文本框对象
+    var t = $("#num");
+
+    t.on('blur', function () {
+        if (t.val() <= 1) {
+            t.val("1");
+        }
+    })
+
+    //初始化数量为1,并失效减
+    $('#min').attr('disabled', true);
+    //数量增加操作
+    $("#add").click(function () {
+        t.val(parseInt(t.val()) + 1)
+        if (parseInt(t.val()) != 1) {
+            $('#min').attr('disabled', false);
+        }
+
+    })
+    //数量减少操作
+    $("#min").click(function () {
+        if (parseInt(t.val()) <= 1 || (parseInt(t.val()) - 1) == 1) {
+            t.val("1");
+            $('#min').attr('disabled', true);
+            return;
+        }
+        t.val(parseInt(t.val()) - 1);
+    })
+    //num
+
+</script>
+
+</body>
+</html>
