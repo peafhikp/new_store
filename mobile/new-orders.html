@@ -1,0 +1,208 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>訂單頁</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="stylesheet" href="assets/css/new-style.css">
+
+</head>
+<body>
+<div class="am-u-sm-12 address" style="padding: 0;">
+
+    <div class="am-u-sm-12 am-form-group" style="background: #eee; margin: 0; padding: 0; border-bottom: 1px solid #ddd;">
+        <select id="prov_id" class="prov am-u-sm-12" data-am-selected="{btnWidth: '100%'}" placeholder="請選擇" style=" background: #eee; font-size: 1.6rem; border: none;"><option value ="請選擇">請選擇</option><option value ="台北縣">台北縣</option></select>
+    </div>
+
+    <div class="am-u-sm-12 am-form-group" style="background: #eee; margin: 0; padding: 0; border-bottom: 1px solid #ddd;">
+        <select id="city_id" class="city am-u-sm-12" data-am-selected="{btnWidth: '100%'}" placeholder="請選擇" disabled="disabled" style="margin: 10px 0; background: #eee; font-size: 1.6rem; border: none;"></select>
+    </div>
+
+    <div class="am-input-group am-u-sm-12" style="padding: 0 10px; background: #eee; border-bottom: 1px solid #ddd;">
+        <input id="address" type="text" class="am-form-field" placeholder="請輸入詳細地址" style="background: #eee; color: #666; border: none; padding: 0;">
+    </div>
+
+    <div class="am-input-group am-u-sm-12" style="padding: 0 10px; background: #eee; border-bottom: 1px solid #ddd;">
+        <input id="name" type="text" class="am-form-field" placeholder="請輸入收貨人姓名" style="background: #eee; color: #666; border: none; padding: 0;">
+    </div>
+
+    <div class="am-input-group am-u-sm-12" style="padding: 0 10px; background: #eee; border-bottom: 1px solid #ddd;">
+        <input id="phone" type="text" class="am-form-field" placeholder="請輸入收貨人聯繫電話" style="background: #eee; color: #666; border: none; padding: 0;">
+    </div>
+
+</div>
+
+<div class="am-u-sm-12 or-info">
+    <div class="or-img">
+        <div class="am-u-sm-4 sc-img" style="padding: 0;">
+            <img style="width: 100%; height: 100%" src="assets/i/examples/gnib.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="am-u-sm-6 or-name">
+        华为honor/荣耀自拍杆华为荣耀手机通用自拍杆迷你便携自拍
+        <div class="or-size">
+            尺碼：44
+        </div>
+        <div class="or-color">
+            顏色分類：黑色
+        </div>
+    </div>
+    <div class="or-price">
+        <div class="am-u-sm-2 sc-img" style="padding: 0;">
+            $ 9999
+        </div>
+    </div>
+</div>
+
+<div class="am-u-sm-12 or-last">
+    <div class="am-u-sm-12 or-num">
+        <div class="am-u-sm-4 buy-num">購買數量</div>
+
+        <div class="am-u-sm-8" style="padding: 0;">
+            <div class="am-u-sm-3" style="padding: 0;">
+                <button id="min" type="button" class="am-btn am-btn-default am-u-sm-12"><i class="am-icon-minus"></i></button>
+            </div>
+            <div class="am-u-sm-6" style="padding: 0;">
+                <input id="num" class="am-form-field am-u-sm-12" style="text-align: center;" type="text" name="num" maxlength="40" value="1" placeholder="請输入购买數量"/>
+            </div>
+            <div class="am-u-sm-3" style="padding: 0;">
+                <button id="add" type="button" class="am-btn am-btn-default am-u-sm-12"><i class="am-icon-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="am-u-sm-12 or-send">
+        <div class="am-u-sm-4 buy-send" style="padding: 0;">配送方式</div>
+
+        <div class="am-u-sm-8" style="padding: 0; text-align: right;">
+            宅配到家 貨到付款
+        </div>
+    </div>
+
+    <div class="am-u-sm-12 or-leave">
+        <div class="am-u-sm-5 buy-send" style="padding: 0;">給賣家留言：</div>
+
+        <div class="am-u-sm-7" style="padding: 0;">
+            <input id="leave" type="text" class="am-form-field" placeholder="選填:對本次交易的說明" style="color: #666; border: none; padding: 3px 0 0 0;">
+        </div>
+    </div>
+
+</div>
+
+<div class="am-u-sm-12 or-footer" style="z-index: 999;">
+    <div class="am-u-sm-8 or-total">
+        共<span style="color: #DD2727;">1</span>件,總金額<span style="color: #DD2727;"> $999</span>
+    </div>
+    <div id="submit" class="am-u-sm-4 or-submit">
+        提交訂單
+    </div>
+</div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<script>
+
+    $("#submit").click(function () {
+        if ($("#prov_id").val() == "請選擇") {
+            alert("請選擇市/縣");
+            return false;
+        }
+        if ($("#city_id").val() == "請選擇") {
+            alert("請選擇區");
+            return false;
+        }
+        if ($("#address").val() == "") {
+            alert("地址不能為空！");
+            return false;
+        }
+        if ($("#name").val() == "") {
+            alert("收貨人姓名不能為空！");
+            return false;
+        }
+        var ph = $("#phone").val();
+        if (!ph) {
+            alert("手機號不能為空！")
+            return false;
+        }
+        var reg = $("#phone").val().length < 10;
+        if (reg) {
+            alert("請輸入正確的手機號碼！")
+            return false;
+        }
+    });
+
+    //num
+    //获得文本框对象
+    var t = $("#num");
+
+    t.on('blur', function () {
+        if (t.val() <= 1) {
+            t.val("1");
+        }
+    })
+
+    //初始化数量为1,并失效减
+    $('#min').attr('disabled', true);
+    //数量增加操作
+    $("#add").click(function () {
+        t.val(parseInt(t.val()) + 1)
+        if (parseInt(t.val()) != 1) {
+            $('#min').attr('disabled', false);
+        }
+
+    })
+    //数量减少操作
+    $("#min").click(function () {
+        if (parseInt(t.val()) <= 1 || (parseInt(t.val()) - 1) == 1) {
+            t.val("1");
+            $('#min').attr('disabled', true);
+            return;
+        }
+        t.val(parseInt(t.val()) - 1);
+    })
+    //num
+
+</script>
+
+</body>
+</html>
