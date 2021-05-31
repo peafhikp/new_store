@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>購物車頁面</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="stylesheet" href="assets/css/new-style.css">
+
+    <style>
+        body{
+            background: #EEEEEE;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="am-u-sm-12 shopcart" style="padding: 0;">
+
+
+    <div class="am-u-sm-12 de-header">
+            <span class="am-u-sm-3" style="text-align: left; cursor: pointer;" onclick="location='new-details.html'">
+                <img src="assets/i/examples/top-back.png" alt=""/>
+            </span>
+            <span class="am-u-sm-6">
+                <span style="color: #FFF;">購物車</span>
+            </span>
+            <span class="am-u-sm-3" style="text-align: right; line-height: 40px;">
+                <!--<img src="assets/i/examples/top-shopcart.png" alt="" style="padding: 2px 4px 0 0;" onclick="location='new-select.html'">-->
+                <!--<img src="assets/i/examples/top-home.png" alt="" onclick="location='new-index.html'">-->
+            </span>
+    </div>
+
+    <div id="sc-clean" class="am-u-sm-12" style="padding: 10px 0; margin: 10px 0; font-size: 0; border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC; background: #FCFCFC;">
+
+        <div class="am-u-sm-12" style="padding: 0;">
+            <div class="am-u-sm-4" style="padding: 0 5px 0 10px;">
+                <img style="width: 100%; height: 100%" src="assets/i/examples/gnib.jpg" alt=""/>
+            </div>
+            <div class="am-u-sm-8" style="padding: 0 10px 0 5px;">
+                <div style="font-size: 12px; color: #000;">【1300W像素】华为honor/荣耀 畅玩5A 4G智能手机大屏官方正品</div>
+                <div style="font-size: 12px; color: #999;">顏色分類：藏藍色</div>
+                <div style="font-size: 12px; color: #999;">尺碼：44</div>
+                <div style="font-size: 18px; color: #DD2727;">$888</div>
+                <div id="delete" style="font-size: 14px; color: #DD2727; text-align: right;">刪除</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="am-u-sm-12 de-footer" style="background: #FFF;">
+    <div class="am-u-sm-8" style="padding: 0 10px; text-align: right;">
+        <div>合計：<span id="sc-mon" style="font-size: 18px; color: #DD2727;">$888</span></div>
+    </div>
+    <div id="submit" class="am-u-sm-4" style="background: #DD2727; color: #FFF; height: 45px; line-height: 45px;"><span>結算</span></div>
+</div>
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<script>
+
+    $("#delete").click(function () {
+        $("#sc-clean").hide();
+        $("#submit").css("background","#B0B0B0");
+        $("#submit").css("border","#B0B0B0");
+        $("#submit").css("cursor","not-allowed");
+        $("#sc-num").html("0");
+        $("#sc-mon").html("0.00");
+    });
+
+    $("#submit").click(function () {
+        if($("#sc-clean").is(":hidden")){
+
+        }else{
+            window.location.href = "new-orders.html";
+        }
+    });
+
+    //num
+    //获得文本框对象
+    var t = $("#num");
+
+    t.on('blur', function () {
+        if (t.val() <= 1) {
+            t.val("1");
+        }
+    })
+
+    //初始化数量为1,并失效减
+    $('#min').attr('disabled', true);
+    //数量增加操作
+    $("#add").click(function () {
+        t.val(parseInt(t.val()) + 1)
+        if (parseInt(t.val()) != 1) {
+            $('#min').attr('disabled', false);
+        }
+
+    })
+    //数量减少操作
+    $("#min").click(function () {
+        if (parseInt(t.val()) <= 1 || (parseInt(t.val()) - 1) == 1) {
+            t.val("1");
+            $('#min').attr('disabled', true);
+            return;
+        }
+        t.val(parseInt(t.val()) - 1);
+    })
+    //num
+
+
+
+</script>
+
+</body>
+</html>

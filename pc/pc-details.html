@@ -1,0 +1,339 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>詳情頁</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+
+    <link rel="stylesheet" href="assets/css/new-style.css">
+
+    <style>
+        body{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .dian{
+            border: 1px solid #be0106!important;
+        }
+        .show{
+            border: 1px solid #b40000!important;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+
+    <div class="am-u-sm-12 de-header">
+            <span class="am-u-sm-2" style="text-align: left; cursor: pointer;" onclick="location='new-index.html'">
+                <img src="assets/i/examples/top-back.png" alt=""/>
+            </span>
+            <span class="am-u-sm-8">
+                <span style="color: #FFF;">勞斯萊斯幻影</span>
+            </span>
+            <span class="am-u-sm-2" style="text-align: right; line-height: 40px; cursor: pointer;">
+                <img src="assets/i/examples/top-shopcart.png" alt="" style="padding: 2px 15px 0;" onclick="location='new-shopcart.html'">
+                <img src="assets/i/examples/top-home.png" alt="" onclick="location='new-index.html'">
+            </span>
+    </div>
+
+
+    <div class="am-u-sm-12" style="padding: 20px 0;">
+        <div class="am-u-sm-6" style="padding: 0;">
+            <div class="swiper-container am-u-sm-12" style="width: 100%; height: 100%; padding: 0;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/></div>
+                    <div class="swiper-slide"><img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/></div>
+                    <div class="swiper-slide"><img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/></div>
+                    <div class="swiper-slide"><img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/></div>
+                    <div class="swiper-slide"><img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div id="collect" class="am-u-sm-12" style="padding: 5px 10px; cursor: pointer;" onclick="change_pic()">
+                <img id="img" style="margin-top: -4px;" src="assets/i/examples/collect.png" alt=""/>
+                <span style="color: #999; font-size: 14px;">收藏商品</span>
+            </div>
+        </div>
+
+        <div class="main am-u-sm-6">
+            <div class="title">TOPSHOPPETITES娇小版JONI高腰版弹力修身牛仔裤999999</div>
+
+            <div class="price am-u-sm-12" style="background: #e9e9e9; width: 100%; height: 40px;">
+                <span class="am-u-sm-2" style="color: #999; font-size: 12px; line-height: 40px; padding: 0; text-align: left;">價格</span>
+                <span class="am-u-sm-10" style="padding: 0;">$ 999</span>
+            </div>
+
+            <div class="send am-u-sm-12" style="width: 100%; height: 40px; padding: 0 10px;">
+                <span class="am-u-sm-2" style="color: #999; font-size: 12px; line-height: 40px; padding: 0; text-align: left;">運費</span>
+                <span class="am-u-sm-10" style="padding: 0; font-size: 15px; line-height: 40px;">宅配到家</span>
+            </div>
+
+            <div class="sales am-u-sm-12" style="width: 100%; height: 40px; padding: 0 10px;">
+                <span class="am-u-sm-2" style="color: #999; font-size: 12px; line-height: 40px; padding: 0; text-align: left;">月销量</span>
+                <span class="am-u-sm-10" style="padding: 0; font-size: 15px; line-height: 38px; color: #c40000; font-weight: bolder;">18293</span>
+            </div>
+
+
+
+        <div id="skin" class="am-u-sm-12 skin" style=" position: relative; left: 0; top: 0; border: 1px solid #FFF; padding: 0;">
+
+            <div id="select-title" class="select-title am-u-sm-12" style="background: #fff8f7; border-bottom: 1px solid #f3e9e7; font-size: 13px; padding: 0 10px; color: #666; height: 24px; line-height: 24px; display: none;">
+                <span class="am-u-sm-10" style="padding: 0;">請選擇您要的商品信息</span><b id="skin-close" class="am-u-sm-2" style="font-size: 14px; color: #b40000; padding: 0; text-align: right; cursor: pointer;">x</b>
+            </div>
+
+            <div class="de-size am-u-sm-12" style="width: 100%; height: 40px; padding: 0 10px; margin: 5px 0;">
+                <div class="am-u-sm-2" style="color: #999; font-size: 12px; line-height: 40px; padding: 0; text-align: left;">尺碼</div>
+                <div class="am-u-sm-10" style="padding: 0; font-size: 15px; line-height: 40px;">
+                    <span id="size-list" style="padding: 5px; border: 1px solid #ccc; margin-right: 5px; cursor: pointer;">40</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">41</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">42</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">43</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">44</span>
+                </div>
+            </div>
+
+            <div class="de-size am-u-sm-12" style="width: 100%; height: 40px; padding: 0 10px; margin: 5px 0;">
+                <div class="am-u-sm-2" style="color: #999; font-size: 12px; line-height: 40px; padding: 0; text-align: left;">顏色分類</div>
+                <div class="am-u-sm-10" style="padding: 0; font-size: 15px; line-height: 40px;">
+                    <span id="color-list" style="padding: 5px; border: 1px solid #ccc; margin-right: 5px; cursor: pointer;">黑色1</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">藏藍色</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">藏藍色</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">藏藍色</span>
+                    <span style="padding: 5px; border: 1px solid #ccc; margin-right: 5px;">藏藍色</span>
+                </div>
+            </div>
+
+            <div class="de-size am-u-sm-12" style="width: 100%; height: 40px; padding: 0 10px; margin: 5px 0 30px;">
+                <div class="am-u-sm-2" style="color: #999; font-size: 12px; line-height: 40px; padding: 0; text-align: left;">数量</div>
+                <div class="am-u-sm-10" style="padding: 0; font-size: 15px; line-height: 40px;">
+                    <div class="am-u-sm-2" style="padding: 0;">
+                        <input id="num" class="am-form-field" style="text-align: center;" type="text" name="num" maxlength="40" value="1" placeholder="请输入购买數量"/>
+                    </div>
+                        <span id="add" style="border: 1px solid #ccc; height: 15px; position: relative; top: -12px; left: 5px; font-size: 10px; padding: 0 5px; cursor: pointer;">∧</span>
+                        <span id="min" style="border: 1px solid #ccc; height: 15px; position: relative; top: 7px; left: -19px; font-size: 10px; padding: 0 5px; cursor: pointer;">∨</span>
+                </div>
+            </div>
+
+
+            <div class="de-add-buy am-u-sm-12" style="text-align: center; padding: 0 10px; margin: 20px 0; z-index: 999;">
+                <div id="aaa" class="am-u-sm-2" style="padding: 0; text-align: left;">&nbsp;</div>
+                <div class="am-u-sm-5" style="padding: 0;">
+                    <div id="go-buy" class="de-add am-u-sm-11" style="padding: 5px 15px; background: #FFEDED; border: 1px solid #c40000; color: #c40000; cursor: pointer;">立即購買</div>
+                </div>
+                <div class="am-u-sm-5" style="padding: 0;">
+                    <div id="go-shopcart" class="de-buy am-u-sm-11" style="padding: 5px 15px; background: #C40000; border: 1px solid #c40000; color: #FFF; cursor: pointer;">加入購物車</div>
+                </div>
+            </div>
+
+                <div id="sure" class="am-u-sm-12" style="padding: 0; position: absolute; bottom: 0; left: 84px; display: none; cursor: pointer;">
+                    <div style=" width: 76px; height: 33px; background: #c40000; color: #FFF; padding: 5px 10px; margin: 10px 0 20px; text-align: center;">確認</div>
+                </div>
+
+
+        </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="description am-u-sm-12" style="padding : 0;">
+        <div class="des-title am-u-sm-12">商品詳情</div>
+        <div class="des-images">
+            <img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/>
+            <img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/>
+            <img style="width: 100%; height: 100%" src="assets/i/examples/bing.jpg" alt=""/>
+        </div>
+    </div>
+
+    <div class="de-copyright am-u-sm-12">
+        ©2009-2016 JiaHong All Rights Reserved. 版权所有
+    </div>
+
+    <!--container-->
+</div>
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="assets/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+
+    function change_pic() {
+        var imgObj = document.getElementById("img");
+        if (imgObj.getAttribute("src") == "assets/i/examples/collect.png") {
+            imgObj.src = "assets/i/examples/collect2.png";
+        } else {
+            imgObj.src = "assets/i/examples/collect.png";
+        }
+    }
+
+    $(document).ready(function () {
+
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: 2500
+        });
+
+        //num
+        //获得文本框对象
+        var t = $("#num");
+
+        t.on('blur', function () {
+            if (t.val() <= 1) {
+                t.val("1");
+            }
+        });
+
+        //初始化数量为1,并失效减
+        $('#min').attr('disabled', true);
+        //数量增加操作
+        $("#add").click(function () {
+            t.val(parseInt(t.val()) + 1)
+            if (parseInt(t.val()) != 1) {
+                $('#min').attr('disabled', false);
+            }
+
+        })
+        //数量减少操作
+        $("#min").click(function () {
+            if (parseInt(t.val()) <= 1 || (parseInt(t.val()) - 1) == 1) {
+                t.val("1");
+                $('#min').attr('disabled', true);
+                return;
+            }
+            t.val(parseInt(t.val()) - 1);
+        });
+        //num
+
+        $("#size-list").click(function () {
+            if ($("#size-list").hasClass("dian")) {
+                $("#size-list").removeClass("dian");
+            } else {
+                $("#size-list").addClass("dian");
+            }
+        });
+
+        $("#color-list").click(function () {
+            if ($("#color-list").hasClass("dian")) {
+                $("#color-list").removeClass("dian");
+            } else {
+                $("#color-list").addClass("dian");
+            }
+        });
+
+//   判斷 立即購買 加入購物車
+
+        $("#go-buy").click(function () {
+            if ($("#size-list").hasClass("dian") && $("#color-list").hasClass("dian")) {
+                window.location.href = "new-orders.html";
+                return true;
+            } else {
+                $("#skin").addClass("show");
+                $("#select-title").show();
+                $("#aaa").hide();
+                $("#go-buy").hide();
+                $("#go-shopcart").hide();
+                return false;
+            }
+        });
+
+        $("#go-shopcart").click(function () {
+            if ($("#size-list").hasClass("dian") && $("#color-list").hasClass("dian")) {
+                return false;
+            } else {
+                $("#skin").addClass("show");
+                $("#select-title").show();
+                $("#aaa").hide();
+                $("#go-buy").hide();
+                $("#go-shopcart").hide();
+                return false;
+            }
+        });
+
+
+        $("#color-list" && "#size-list").click(function () {
+                if ($("#size-list").hasClass("dian") && $("#color-list").hasClass("dian")) {
+                    $("#sure").show();
+                    return false;
+                } else {
+                    $("#sure").hide();
+                }
+        });
+
+
+        $("#size-list" && "#color-list").click(function () {
+            if ($("#size-list").hasClass("dian") && $("#color-list").hasClass("dian")) {
+                $("#sure").show();
+                return false;
+            } else {
+                $("#sure").hide();
+            }
+        });
+
+        $("#sure").click(function () {
+            window.location.href = "new-orders.html";
+        });
+
+        $("#skin-close").click(function () {
+            $("#skin").removeClass("show");
+            $("#select-title").hide();
+            $("#aaa").show();
+            $("#go-buy").show();
+            $("#go-shopcart").show();
+        });
+//   判斷 立即購買 加入購物車
+
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>購物車頁面</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <style>
+        body{
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="am-u-sm-12 shopcart" style="padding: 0;">
+
+    <div class="or-top am-u-sm-12" style="text-align: left; padding: 10px 0; color: #333; font-weight: bold;">購物車</div>
+
+    <div class="am-u-sm-12" style="padding: 5px 0; font-size: 0;">
+        <div style="border-bottom: 3px solid #CCCCCC; display: inline-block; width: 496px; margin-right: 1px; font-size: 15px; text-align: center; line-height: 24px; color: #000;">商品信息</div>
+        <div style="border-bottom: 3px solid #CCCCCC; display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; text-align: center; line-height: 24px; color: #000;">單價</div>
+        <div style="border-bottom: 3px solid #CCCCCC; display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; text-align: center; line-height: 24px; color: #000;">數量</div>
+        <div style="border-bottom: 3px solid #CCCCCC; display: inline-block; width: 100px; margin-right: 1px; font-size: 15px; text-align: center; line-height: 24px; color: #000;">金額</div>
+        <div style="border-bottom: 3px solid #CCCCCC; display: inline-block; width: 100px; font-size: 15px; line-height: 24px; text-align: center; color: #000;">操作</div>
+    </div>
+
+    <div id="sc-clean" class="am-u-sm-12" style="padding: 0; margin: 10px 0; font-size: 0; border-top: 1px solid #CCCCCC; border-bottom: 1px solid #CCCCCC;">
+        <div style="background: #FCFCFC; padding: 10px 0;">
+            <div style=" display: inline-block; width: 296px; margin-right: 1px; font-size: 15px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; vertical-align: top; padding: 0 10px;">
+                <img style="width: 20%; height: 20%" src="assets/i/examples/gnib.jpg" alt=""/>
+                【1300W像素】华为honor/荣耀 畅玩5A 4G智能手机大屏官方正品
+            </div>
+            <div style=" display: inline-block; width: 200px; margin-right: 1px; font-size: 15px; padding: 0 10px;">
+                <div style="margin-right: 1px;">尺碼：44</div>
+                <div style="margin-right: 1px;">顏色分類：白色</div>
+            </div>
+            <div style=" display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; text-align: center; vertical-align: top;">888</div>
+            <div style=" display: inline-block; width: 150px; margin-right: 1px; font-size: 15px; text-align: center; vertical-align: top;">
+                <div style="padding: 0; display: inline-block;">
+                    <button id="min" type="button" class="am-btn am-btn-default" style=" font-size: 11px; display: inline-block;"><i class="am-icon-minus"></i></button>
+                    <input id="num" class="am-form-field" style="text-align: center; width: 50px; height: 28px; display: inline-block;" type="text" name="num" maxlength="40" value="1" placeholder="请输入购买數量"/>
+                    <button id="add" type="button" class="am-btn am-btn-default" style=" font-size: 11px; display: inline-block;"><i class="am-icon-plus"></i></button>
+                </div>
+            </div>
+            <div style=" display: inline-block; width: 100px; font-size: 15px; color: #dd2727; text-align: center; vertical-align: top;">888</div>
+            <div id="delete" style=" display: inline-block; width: 100px; font-size: 15px; color: #dd2727; text-align: center; vertical-align: top; cursor: pointer;"><span>删除</span></div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="am-u-sm-12" style="padding: 0;">
+    <div class="am-u-sm-4 am-fr" style="padding: 0; text-align: right; border: 1px solid #dd2727;">
+        <div style="border: 3px solid #fff0e8; padding: 10px 10px 10px 20px;">
+            <div><span style="color: #333; font-weight: bold; font-size: 14px;">已選商品 <span id="sc-num" style="color: #dd2727; font-size: 18px;">1</span> 件</span></div>
+            <div><span style="color: #333; font-weight: bold; font-size: 14px;">合計：</span><span style="color: #dd2727; font-size: 26px; margin-left: 4px;">$</span><span id="sc-mon" style="color: #dd2727; font-size: 26px; font-weight: bold;">799.00</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="am-u-sm-12" style="padding: 0;">
+    <div id="submit" style="padding: 0; text-align: center; border: 1px solid #dd2727; height: 40px; width: 180px; background: #dd2727; float: right; color: #FFF; line-height: 35px; font-size: 16px; cursor: pointer;">
+        結算
+    </div>
+</div>
+
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<script>
+
+    $("#delete").click(function () {
+        $("#sc-clean").hide();
+        $("#submit").css("background","#B0B0B0");
+        $("#submit").css("border","#B0B0B0");
+        $("#submit").css("cursor","not-allowed");
+        $("#sc-num").html("0");
+        $("#sc-mon").html("0.00");
+    });
+
+    $("#submit").click(function () {
+        if($("#sc-clean").is(":hidden")){
+
+        }else{
+            window.location.href = "new-orders.html";
+        }
+    });
+
+    //num
+    //获得文本框对象
+    var t = $("#num");
+
+    t.on('blur', function () {
+        if (t.val() <= 1) {
+            t.val("1");
+        }
+    })
+
+    //初始化数量为1,并失效减
+    $('#min').attr('disabled', true);
+    //数量增加操作
+    $("#add").click(function () {
+        t.val(parseInt(t.val()) + 1)
+        if (parseInt(t.val()) != 1) {
+            $('#min').attr('disabled', false);
+        }
+
+    })
+    //数量减少操作
+    $("#min").click(function () {
+        if (parseInt(t.val()) <= 1 || (parseInt(t.val()) - 1) == 1) {
+            t.val("1");
+            $('#min').attr('disabled', true);
+            return;
+        }
+        t.val(parseInt(t.val()) - 1);
+    })
+    //num
+
+
+
+</script>
+
+</body>
+</html>

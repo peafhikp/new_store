@@ -1,0 +1,453 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>購物車頁面</title>
+
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="stylesheet" href="assets/css/new-style.css">
+
+    <style>
+        body{
+            background: #F5F5F9;
+        }
+        .am-btn{
+            font-size: 14px;
+        }
+        .am-selected {
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="am-u-sm-12" style="padding: 0;">
+
+
+    <div class="am-u-sm-12 de-header">
+            <span class="am-u-sm-3" style="text-align: left; cursor: pointer;" onclick="location='new-details.html'">
+                <img src="assets/i/examples/top-back.png" alt=""/>
+            </span>
+            <span class="am-u-sm-6">
+                <span style="color: #FFF;">付款詳情</span>
+            </span>
+            <span class="am-u-sm-3">
+            </span>
+    </div>
+
+
+
+    <div id="sc-clean" class="am-u-sm-12" style="padding: 0; margin: 10px 0; font-size: 0; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; background: #fff;">
+
+        <div class="am-u-sm-12" style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">
+            <div class="am-u-sm-4" style="font-size: 12px; color: #999;">訂單信息</div>
+            <div class="am-u-sm-8" style="font-size: 14px; color: #000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: right;">哆啦a梦公仔机器猫蓝胖子抱枕布娃娃毛绒玩具儿童节玩偶生日礼物</div>
+        </div>
+
+
+
+
+        <div class="am-u-sm-12" style="padding: 10px 0; border-bottom: 1px solid #e5e5e5;">
+
+            <div class="am-u-sm-12" style="padding: 0;">
+                <div class="am-u-sm-4" style="font-size: 12px; color: #999; line-height: 30px;">付款方式</div>
+                <div id="pay-forr" class="am-u-sm-8" style="text-align: right;">
+                    <select id="pay-for" class="am-u-sm-12" data-am-selected placeholder="請選擇付款方式">
+                        <option value=""></option>
+                        <option value="a">貨到付款</option>
+                        <option value="b">在線支付</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="am-u-sm-12" style="padding: 0;">
+
+
+                <div style="text-align: center;">
+                    <form id="payment">
+
+                        <div id="show-pay" class="am-u-sm-12" style="padding: 0; display: none;">
+
+                            <div class="am-form-group am-u-sm-12" style="padding: 5px; margin: 0; border-bottom: 1px solid #ccc;">
+                                <input class="am-u-sm-12 am-form-field" style="border: none;" type="text" name="creditcard_num" value=""
+                                       id="txtCardNumber" maxLength="16" width="20"
+                                       onkeyup="checkCardNumber();" oninput="checkCardNumber();" placeholder="請輸入信用卡號"/>
+
+                                <img src="assets/i/examples/vmj.png" style="position: absolute; top: 14px; right: 10px;" id="vmj">
+
+                            </div>
+
+
+                            <div class="am-u-sm-12" style="padding: 5px; border-bottom: 1px solid #ccc;">
+                                <!-- <label>有效期：</label> -->
+
+                                <div class="am-u-sm-6" style="padding: 0; padding-right: 5px;">
+                                    <select name="CardMonth" id="selCardMonth" data-am-selected placeholder="Month">
+                                        <option value="">Month</option>
+                                        <?php for ($i = 1; $i <= 12; $i++) { ?>
+                                        <option
+                                                value="<?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?>"><?php echo str_pad($i, 2, '0', STR_PAD_LEFT); ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+
+                                <div class="am-u-sm-6" style="padding: 0; padding-left: 5px;">
+                                    <select class="f-right" name="CardYear" id="selCardYear" data-am-selected placeholder="Year">
+                                        <option value="">Year</option>
+                                        <?php $year = date('Y'); ?>
+                                        <?php for ($i = 0; $i <= 100; $i++) { ?>
+                                        <option value="<?php echo $year + $i; ?>"><?php echo $year + $i; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- <label>信用卡CVV：</label> -->
+                            <div class="am-form-group am-u-sm-12" style="padding: 5px; margin: 0; border-bottom: 1px solid #ccc;">
+                                <input type="text" maxlength="3" name="creditcard_cvv" id="txtCardCvv" class="am-u-sm-10 am-form-field"
+                                       style="border: none; width: 80%;" value=""
+                                       onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                       oninput="this.value=this.value.replace(/\D/g,'')" placeholder="請輸入信用卡CVV2/CVC2/CAV2">
+
+                                <div id="smallcard" class="am-u-sm-2" style="padding: 0; text-align: right; line-height: 30px;">
+                                    <img src="assets/i/examples/card_demo.png" style="cursor: pointer;" id="imgCardCvv">
+                                </div>
+
+                            </div>
+                            <div id="bigcard" onclick="CardHide();"
+                                 style="position: relative; top: 0; left: 10px; z-index: 999; display: none;">
+                                <img src="assets/i/examples/card_demo.jpg">
+                            </div>
+
+
+
+
+                        <div class="am-u-sm-12" style="padding: 5px;">
+                            <div class="am-u-sm-6">
+                                <label class="am-checkbox am-danger" style="text-align: left;">
+                                    <input id="check" type="checkbox" name="check" value="" data-am-ucheck><span id="off"
+                                                                                                                 style="font-size: 15px; line-height: 10px;">非本人收件</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                        <div id="checkbox" class="am-u-sm-12" style="display: none; padding: 10px 0;">
+
+                            <!-- <label>賬&nbsp;&nbsp;&nbsp;單&nbsp;&nbsp;&nbsp;人：</label> -->
+                            <div class="am-form-group am-u-sm-12" style="padding: 5px; margin: 0; border-bottom: 1px solid #ccc;">
+                                <input type="text" name="account_name" id="account_name" class="am-u-sm-12 am-form-field"
+                                       style="border: 0;"
+                                       placeholder="請輸入賬單人姓名" value=""/>
+                            </div>
+                            <!-- <label>賬單人邮箱：</label> -->
+                            <div class="am-form-group am-u-sm-12" style="padding: 5px; margin: 0; border-bottom: 1px solid #ccc;">
+                                <input type="text" name="account_email" id="account_email" class="am-u-sm-12 am-form-field"
+                                       style="border: 0;"
+                                       placeholder="請輸入賬單人郵箱" value=""/>
+                            </div>
+                            <!-- <label>賬單人地址：</label> -->
+                            <div class="am-form-group am-u-sm-12" style="padding: 5px; margin: 0; border-bottom: 1px solid #ccc;">
+                                <input type="text" name="account_addr" id="account_addr" class="am-u-sm-12 am-form-field"
+                                       style="border: 0;"
+                                       placeholder="請輸入賬單人地址" value=""/>
+                            </div>
+
+                            <!-- <label>賬單人电话：</label> -->
+                            <div class="am-form-group am-u-sm-12" style="padding: 5px; margin: 0; border-bottom: 1px solid #ccc;">
+                                <input type="text" name="account_phone" id="account_phone" class="am-u-sm-12 am-form-field"
+                                       style="border: 0;"
+                                       placeholder="請輸入賬單人電話" value=""/>
+                            </div>
+
+                        </div>
+
+                        <input type="hidden" name="order_sn" value="<?php echo $orderSn ?>"/>
+
+                    </form>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+
+        <div class="am-u-sm-12" style="padding: 10px 0;">
+            <div class="am-u-sm-4" style="font-size: 16px; line-height: 30px;">需付款</div>
+            <div class="am-u-sm-8" style="font-size: 20px; text-align: right; line-height: 30px;">$88.88</div>
+        </div>
+
+    </div>
+
+    <div class="am-u-sm-12" style="padding: 0; margin: 20px 0 30px;">
+        <div class="am-u-sm-11 am-u-sm-centered" style="padding: 0;">
+        <button id="yes" type="button" class="am-u-sm-12 am-btn am-btn-secondary" style="border-radius: 4px; font-size: 18px;">確認付款</button>
+        </div>
+    </div>
+
+    <div class="am-u-sm-12" style="padding: 10px 0 20px;">
+        <div class="am-u-sm-6 am-u-lg-3" style="padding: 10px;">
+            <img src="assets/i/examples/1.png">
+        </div>
+        <div class="am-u-sm-6 am-u-lg-3" style="padding: 10px;">
+            <img src="assets/i/examples/2.png">
+        </div>
+        <div class="am-u-sm-6 am-u-lg-3" style="padding: 10px;">
+            <img src="assets/i/examples/3.png">
+        </div>
+        <div class="am-u-sm-6 am-u-lg-3" style="padding: 10px;">
+            <img src="assets/i/examples/4.png">
+        </div>
+    </div>
+
+</div>
+
+<!--在这里编写你的代码-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+<script>
+    $("document").ready(function() {
+
+        $(".am-selected-list li:eq(0)").click(function () {
+            $("#show-pay").hide();
+        });
+
+        $(".am-selected-list li:eq(1)").click(function () {
+            $("#show-pay").show();
+        });
+
+
+        $("#yes").click(function () {
+
+            if($("#pay-for").val() == ""){
+                alert("請選擇付款方式");
+            }
+
+            if ($("#pay-for").val() !== "") {
+                var error = false;
+                var txtCardNumber = document.getElementById('txtCardNumber');
+                txtCardNumber.value = txtCardNumber.value.replace(/\D/g, '');
+                if (txtCardNumber.value.length != 16
+                        || !((/^[4]{1}/).test(txtCardNumber.value) || (/^[5]{1}[1-5]{1}/).test(txtCardNumber.value) || (/^[3]{1}[5]{1}/).test(txtCardNumber.value))) {
+                    error = true;
+                    txtCardNumber.style.borderColor = '#FF0000';
+                    txtCardNumber.focus();
+                    alert("非法的卡號");
+                    return false;
+                } else {
+                    txtCardNumber.style.borderColor = '#CCCCCC';
+                    error = false;
+                }
+
+                var selCardMonth = document.getElementById('selCardMonth');
+                if (selCardMonth.value.length != 2) {
+                    error = true;
+                    selCardMonth.style.borderColor = '#FF0000';
+                    selCardMonth.focus();
+                    alert("非法的月份");
+                    return false;
+                } else {
+                    selCardMonth.style.borderColor = '#CCCCCC';
+                    error = false;
+                }
+
+                var selCardYear = document.getElementById('selCardYear');
+                if (selCardYear.value.length != 4) {
+                    error = true;
+                    selCardYear.style.borderColor = '#FF0000';
+                    selCardYear.focus();
+                    alert("非法的年份");
+                    return false;
+                } else {
+                    selCardYear.style.borderColor = '#CCCCCC';
+                    error = false;
+                }
+
+                var txtCardCvv = document.getElementById('txtCardCvv');
+                txtCardCvv.value = txtCardCvv.value.replace(/\D/g, '');
+                if (txtCardCvv.value.length != 3) {
+                    error = true;
+                    txtCardCvv.style.borderColor = '#FF0000';
+                    txtCardCvv.focus();
+                    alert("非法的安全碼");
+                    return false;
+                } else {
+                    txtCardCvv.style.borderColor = '#CCCCCC';
+                    error = false;
+                }
+
+                $("#imgCardCvv").click(function () {
+                    $(this).hide();
+                });
+
+                if (error) {
+                    return false;
+                } else {
+                    var yes = document.getElementById('yes');
+                    return true;
+                }
+            } else {
+//                alert("請選擇付款方式");
+            }
+        })
+
+        $("#smallcard").click(function () {
+            if ($("#bigcard").is(":hidden")) {
+                $("#bigcard").show();    //如果元素为隐藏,则将它显现
+            } else {
+                $("#bigcard").hide();     //如果元素为显现,则将其隐藏
+            }
+        });
+
+        $(function () {
+            $('#check').click(function () {//点击a标签
+                if ($('#checkbox').is(':hidden')) {//如果当前隐藏
+                    $('#checkbox').show();//那么就显示div
+                    $('#off').css('color', '#DD514C');
+                } else {//否则
+                    $('#checkbox').hide();//就隐藏div
+                    $('#off').css('color', '#000');
+                }
+            })
+        });
+
+    });
+
+
+    function CardShow() {
+        document.getElementById("bigcard").style.display = "block";
+    }
+
+    function CardHide() {
+        document.getElementById("bigcard").style.display = "none";
+    }
+
+    function checkCardNumber() {
+        var txtCardNumber = document.getElementById('txtCardNumber');
+        txtCardNumber.value = txtCardNumber.value.replace(/\D/g, '');
+        if ((/^[4]{1}/).test(txtCardNumber.value)) {
+            $('#vmj').hide();
+            txtCardNumber.style.background = 'url("assets/i/examples/v.png") no-repeat 98% center';
+        } else if ((/^[5]{1}[1-5]{1}/).test(txtCardNumber.value)) {
+            $('#vmj').hide();
+            txtCardNumber.style.background = 'url("assets/i/examples/m.png") no-repeat 98% center';
+        } else if ((/^[3]{1}[5]{1}/).test(txtCardNumber.value)) {
+            $('#vmj').hide();
+            txtCardNumber.style.background = 'url("assets/i/examples/j.png") no-repeat 98% center';
+        } else {
+            txtCardNumber.style.background = 'url("assets/i/examples/vmj.png") no-repeat 98% center';
+        }
+    }
+
+
+    function checkForm() {
+
+    }
+
+
+    $("#yes").click(function () {
+        var flag = checkForm();
+        if (!flag) {
+            return;
+        }
+        var ck = $("#check").attr("checked");
+        var ckvalue;
+        if (ck) {
+            if (!$("#account_name").val()) {
+                alert("帳單人姓名不能為空！");
+                return;
+            }
+            if (!$("#account_email").val()) {
+                alert("帳單人郵箱不能為空！");
+                return;
+            }
+            if (!$("#account_addr").val()) {
+                alert("帳單人地址不能為空！");
+                return;
+            }
+            if (!$("#account_phone").val()) {
+                alert("帳單人電話不能為空！");
+                return;
+            }
+            ckvalue = 1;
+        } else {
+            ckvalue = 0;
+        }
+        $.ajax({
+            url: 'pay.php',
+            type: 'POST',
+            data: {"form": $("#payment").serialize(), "ck": ckvalue},
+            dataType: 'json',
+            timeout: 0,
+            cache: false,
+            beforeSend: function () {
+                $('#query_hint').show();
+            },
+            success: function (data) {
+                $('#query_hint').hide();
+                window.location.href = data.url;
+            },//成功执行方法
+            complete: function () {
+                $('#query_hint').hide();
+            },
+            error: function (data) {
+                var error_url = "<?php echo SERVER_ROOT . 'failed.php?msg=系统错误&order_sn=' . $orderSn?>";
+                window.location.href = error_url;
+            } //错误执行方法
+
+        });
+    });
+
+
+
+</script>
+
+</body>
+</html>
