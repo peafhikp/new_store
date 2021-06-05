@@ -38,10 +38,6 @@
 
     <link rel="stylesheet" href="assets/css/new-style.css">
 
-    <!--<link rel="stylesheet" href="assets/css/pullToRefresh.css"/>-->
-    <!--<script src="assets/js/iscroll.js"></script>-->
-    <!--<script src="assets/js/pullToRefresh.js"></script>-->
-
 </head>
 <body>
 <div class="container">
@@ -72,19 +68,19 @@
 
     <!--<div id="wrapper">-->
         <div class="in-content" style="width: 100%!important; height: 100%!important;">
-            <div class="in-imgs" onclick="location='new-details.html'">
+            <div class="in-imgs" onclick="location='m-details.html'">
                 <img style="width: 100%; height: 100%" src="assets/i/examples/note.png" alt=""/>
                 <div class="in-name">荣耀NOTE8</div>
                 <div class="in-price" style="color: #dd0000; font-weight: bold; padding: 10px 0;">$2299<span style="margin-left: 10px; color: #666; font-size: 20px; text-decoration:line-through">$3999</span></div>
                 <div class="am-u-sm-9 am-u-sm-centered in-buy" style="text-align: center;">立即搶購</div>
             </div>
-            <div class="in-imgs" onclick="location='new-details.html'">
+            <div class="in-imgs" onclick="location='m-details.html'">
                 <img style="width: 100%; height: 100%" src="assets/i/examples/note.png" alt=""/>
                 <div class="in-name">荣耀NOTE8</div>
                 <div class="in-price" style="color: #dd0000; font-weight: bold; padding: 10px 0;">$2299<span style="margin-left: 10px; color: #666; font-size: 20px; text-decoration:line-through">$3999</span></div>
                 <div class="am-u-sm-9 am-u-sm-centered in-buy">立即搶購</div>
             </div>
-            <div class="in-imgs" onclick="location='new-details.html'">
+            <div class="in-imgs" onclick="location='m-details.html'">
                 <img style="width: 100%; height: 100%" src="assets/i/examples/note.png" alt=""/>
                 <div class="in-name">荣耀NOTE8</div>
                 <div class="in-price" style="color: #dd0000; font-weight: bold; padding: 10px 0;">$2299<span style="margin-left: 10px; color: #666; font-size: 20px; text-decoration:line-through">$3999</span></div>
@@ -120,42 +116,6 @@
         paginationClickable: true,
         autoplay: 2500
     });
-
-//    refresher.init({
-//        id:"wrapper",
-//        pullDownAction:Refresh,
-//        pullUpAction:Load
-//    });
-//
-//    var generatedCount = 0;
-//    function Refresh() {
-//        setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
-//            var el, li, i;
-//            el =document.querySelector("#wrapper ul");
-//            el.innerHTML='';
-//            for (i=0; i<11; i++) {
-//                li = document.createElement('li');
-//                li.appendChild(document.createTextNode('async row ' + (++generatedCount)));
-//                el.insertBefore(li, el.childNodes[0]);
-//            }
-//            myScroll.refresh();/****remember to refresh when you action was completed！！！****/
-//        }, 1000);
-//    }
-//
-//    function Load() {
-//        setTimeout(function () {// <-- Simulate network congestion, remove setTimeout from production!
-//            var el, li, i;
-//            el =document.querySelector("#wrapper ul");
-//            for (i=0; i<1; i++) {
-//                li = document.createElement('li');
-////                li.appendChild(document.createTextNode('async row ' + (++generatedCount)));
-//                li.innerHTML = "<img style='width: 100%; height: 100%' src='assets/i/examples/note.png' alt=''/><div class='in-name'>荣耀NOTE8</div><div class='in-price'>$2299</div><div class='am-u-sm-9 am-u-sm-centered in-buy' style='text-align: center;'>立即搶購</div>";
-//                el.appendChild(li, el.childNodes[0]);
-//            }
-//            myScroll.refresh();/****remember to refresh when you action was completed！！！****/
-//        }, 1000);
-//    }
-
 </script>
 
 </body>

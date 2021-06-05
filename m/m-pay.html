@@ -55,7 +55,7 @@
 
 
     <div class="am-u-sm-12 de-header">
-            <span class="am-u-sm-3" style="text-align: left; cursor: pointer;" onclick="location='new-details.html'">
+            <span class="am-u-sm-3" style="text-align: left; cursor: pointer;" onclick="location='m-details.html'">
                 <img src="assets/i/examples/top-back.png" alt=""/>
             </span>
             <span class="am-u-sm-6">
@@ -157,7 +157,7 @@
 
                         <div class="am-u-sm-12" style="padding: 5px;">
                             <div class="am-u-sm-6">
-                                <label class="am-checkbox am-danger" style="text-align: left;">
+                                <label id="show-checkbox" class="am-checkbox am-danger" style="text-align: left;">
                                     <input id="check" type="checkbox" name="check" value="" data-am-ucheck><span id="off"
                                                                                                                  style="font-size: 15px; line-height: 10px;">非本人收件</span>
                                 </label>
@@ -270,7 +270,9 @@
                 alert("請選擇付款方式");
             }
 
-            if ($("#pay-for").val() !== "") {
+            if($("#show-pay").is(":hidden")) {
+
+            } else {
                 var error = false;
                 var txtCardNumber = document.getElementById('txtCardNumber');
                 txtCardNumber.value = txtCardNumber.value.replace(/\D/g, '');
@@ -286,29 +288,29 @@
                     error = false;
                 }
 
-                var selCardMonth = document.getElementById('selCardMonth');
-                if (selCardMonth.value.length != 2) {
-                    error = true;
-                    selCardMonth.style.borderColor = '#FF0000';
-                    selCardMonth.focus();
-                    alert("非法的月份");
-                    return false;
-                } else {
-                    selCardMonth.style.borderColor = '#CCCCCC';
-                    error = false;
-                }
+//                var selCardMonth = document.getElementById('selCardMonth');
+//                if (selCardMonth.value.length != 2) {
+//                    error = true;
+//                    selCardMonth.style.borderColor = '#FF0000';
+//                    selCardMonth.focus();
+//                    alert("非法的月份");
+//                    return false;
+//                } else {
+//                    selCardMonth.style.borderColor = '#CCCCCC';
+//                    error = false;
+//                }
 
-                var selCardYear = document.getElementById('selCardYear');
-                if (selCardYear.value.length != 4) {
-                    error = true;
-                    selCardYear.style.borderColor = '#FF0000';
-                    selCardYear.focus();
-                    alert("非法的年份");
-                    return false;
-                } else {
-                    selCardYear.style.borderColor = '#CCCCCC';
-                    error = false;
-                }
+//                var selCardYear = document.getElementById('selCardYear');
+//                if (selCardYear.value.length != 4) {
+//                    error = true;
+//                    selCardYear.style.borderColor = '#FF0000';
+//                    selCardYear.focus();
+//                    alert("非法的年份");
+//                    return false;
+//                } else {
+//                    selCardYear.style.borderColor = '#CCCCCC';
+//                    error = false;
+//                }
 
                 var txtCardCvv = document.getElementById('txtCardCvv');
                 txtCardCvv.value = txtCardCvv.value.replace(/\D/g, '');
@@ -323,6 +325,14 @@
                     error = false;
                 }
 
+                window.location.href = "m-cod.html";
+
+//                if($("#show-check").is(":checked")){
+//                    alert("點了")
+//                }else{
+//                    alert("mei點了")
+//                }
+
                 $("#imgCardCvv").click(function () {
                     $(this).hide();
                 });
@@ -333,10 +343,13 @@
                     var yes = document.getElementById('yes');
                     return true;
                 }
-            } else {
-//                alert("請選擇付款方式");
             }
-        })
+
+            if($("#pay-for").val() !== "" && $(".am-selected-list li:eq(0)")){
+                window.location.href = "m-cod.html";
+            }
+
+        });
 
         $("#smallcard").click(function () {
             if ($("#bigcard").is(":hidden")) {
