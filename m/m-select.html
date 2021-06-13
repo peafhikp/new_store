@@ -132,22 +132,22 @@
         $(document).ready(function () {
 
             $("#sure").click(function () {
-                if ($("#size-list").hasClass("dian")) {
+                if ($("#size-list").hasClass("dian") && $("#color-list").hasClass("dian")) {
                     return true;
-                }else{
-                    alert("請選擇尺碼");
+                }else {
+                    alert("請選擇尺碼、顏色分類");
                     return false;
                 }
             });
 
-            $("#sure").click(function () {
-                if ($("#color-list").hasClass("dian")) {
-                    return true;
-                }else{
-                    alert("請選擇顏色分類");
-                    return false;
-                }
-            });
+//            $("#sure").click(function () {
+//                if ($("#color-list").hasClass("dian")) {
+//                    return true;
+//                }else{
+//                    alert("請選擇顏色分類");
+//                    return false;
+//                }
+//            });
 
 
 

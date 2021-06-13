@@ -56,7 +56,7 @@
 
     <div class="am-u-sm-12 de-header">
             <span class="am-u-sm-3" style="text-align: left; cursor: pointer;" onclick="location='m-details.html'">
-                <img src="assets/i/examples/top-back.png" alt=""/>
+                <img src="assets/i/examples/top-back.png" alt="" style="padding-bottom: 5px;">
             </span>
             <span class="am-u-sm-6">
                 <span style="color: #FFF;">付款詳情</span>
@@ -223,7 +223,7 @@
         </div>
     </div>
 
-    <div class="am-u-sm-12" style="padding: 10px 0 20px;">
+    <div class="am-u-sm-12" style="padding: 10px 0 20px; text-align: center;">
         <div class="am-u-sm-6 am-u-lg-3" style="padding: 10px;">
             <img src="assets/i/examples/1.png">
         </div>
@@ -257,6 +257,9 @@
 
         $(".am-selected-list li:eq(0)").click(function () {
             $("#show-pay").hide();
+            $("#checkbox").hide();
+            $("#check").attr("checked",false);
+            $('#off').css('color', '#000');
         });
 
         $(".am-selected-list li:eq(1)").click(function () {
@@ -288,29 +291,29 @@
                     error = false;
                 }
 
-//                var selCardMonth = document.getElementById('selCardMonth');
-//                if (selCardMonth.value.length != 2) {
-//                    error = true;
-//                    selCardMonth.style.borderColor = '#FF0000';
-//                    selCardMonth.focus();
-//                    alert("非法的月份");
-//                    return false;
-//                } else {
-//                    selCardMonth.style.borderColor = '#CCCCCC';
-//                    error = false;
-//                }
+                var selCardMonth = document.getElementById('selCardMonth');
+                if (selCardMonth.value.length != 2) {
+                    error = true;
+                    selCardMonth.style.borderColor = '#FF0000';
+                    selCardMonth.focus();
+                    alert("非法的月份");
+                    return false;
+                } else {
+                    selCardMonth.style.borderColor = '#CCCCCC';
+                    error = false;
+                }
 
-//                var selCardYear = document.getElementById('selCardYear');
-//                if (selCardYear.value.length != 4) {
-//                    error = true;
-//                    selCardYear.style.borderColor = '#FF0000';
-//                    selCardYear.focus();
-//                    alert("非法的年份");
-//                    return false;
-//                } else {
-//                    selCardYear.style.borderColor = '#CCCCCC';
-//                    error = false;
-//                }
+                var selCardYear = document.getElementById('selCardYear');
+                if (selCardYear.value.length != 4) {
+                    error = true;
+                    selCardYear.style.borderColor = '#FF0000';
+                    selCardYear.focus();
+                    alert("非法的年份");
+                    return false;
+                } else {
+                    selCardYear.style.borderColor = '#CCCCCC';
+                    error = false;
+                }
 
                 var txtCardCvv = document.getElementById('txtCardCvv');
                 txtCardCvv.value = txtCardCvv.value.replace(/\D/g, '');
