@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*主容器*/
+.con-FangDa{
+	width: 450px!important;
+	height: auto;
+	margin: 100px auto;
+	background-color:#fff;
+}
+/*正常容器*/
+.con-fangDaIMg{
+	width: 450px;
+	height: 450px;
+	position: relative;
+	background-color: #454545;
+}
+.con-fangDaIMg > img{
+	width: 100%;
+	height:100%
+}
+/*滑块*/
+.magnifyingBegin{
+	width: 240px;
+	height: 240px;
+	left: 0;
+	top: 0;
+	background-image: url(//img-tmdetail.alicdn.com/tps/i4/T12pdtXaldXXXXXXXX-2-2.png);
+	/*background-color: #35a;*/
+	/*opacity: 0.5;*/
+	/*filter:alpha(opacity=50);*/
+	position: absolute;
+	cursor: move;
+	display: none;
+}
+/*放大镜显示区域*/
+.magnifyingShow{
+	width: 450px;
+	height: 514px;
+	display: none;
+	position: absolute;
+	right: -470px;
+	top: 0;
+	overflow: hidden;
+	background-color: #454545;
+}
+.magnifyingShow > img{
+	width: 844px;
+	height: 908px;
+	margin-left:0;
+	margin-top: 0;
+}
+/*设置选择图片容器*/
+.con-FangDa-ImgList{
+	margin-top:10px;
+	height:60px;
+	width: 450px!important;
+	list-style: none;
+	padding-left: 45px!important;
+}
+.con-FangDa-ImgList > li{
+	margin-right:15px;
+	width: 60px;
+	height: 60px;
+	float: left;
+	cursor: pointer;
+	border: 2px solid #fff;
+	background-color: #454545;
+	text-align:center;
+}
+
+.con-FangDa-ImgList > li > img{
+	vertical-align:top;
+	display:inline;
+	width:100%;
+	height:100%;
+}
+.con-FangDa-ImgList > .active{
+	/*border-color:#000;*/
+	border: 2px solid #000;
+}
